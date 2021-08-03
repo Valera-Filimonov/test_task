@@ -25,7 +25,7 @@
   border: none;
 }
 
-.heading_frame {
+.heading-frame {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-size: 16px;
@@ -41,13 +41,13 @@
 
 }
 
-.qr_code {
+.qr-code {
   padding-top: 20px;
   padding-left: 62.5px;
   padding-right: 62.5px;
 }
 
-.text_invitation {
+.text-invitation {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -86,4 +86,17 @@
   text-align: center;
   text-transform: uppercase;
   color: #86D3F4;
+}
+
+.button-close {
+  position: absolute;
+  Width: 88px;
+  Height: 52px;
+  left: 91.56%;
+  right: 1.56%;
+  top: 2.78%;
+  bottom: 90%;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  outline: none;
 }
