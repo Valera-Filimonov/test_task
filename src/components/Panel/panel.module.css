@@ -5,10 +5,14 @@
     left: 0;
     top: 0;
     background: #86D3F4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .heading-panel {
-    font-family: Roboto, sans-serif;;
+    font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 26px;
@@ -18,3 +22,135 @@
     text-align: center;
     color: #000000;
 }
+
+.input-phone {
+    padding-top: 13px;
+    padding-left: 60px;
+    padding-bottom: 13px;
+    background-color: transparent;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    flex: none;
+    border: none;
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color:#000000;
+    font-weight: bold;
+}
+
+.text-manager {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    flex: none;
+}
+
+.button-phone {
+    background-color: transparent;
+    width: 88px;
+    height: 52px;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline: none;
+    border: 2px solid #000000;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.button-phone:hover {
+    transition-duration: .25s;
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 0.5fr 0.5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.checkboxButton {
+    background: #86D3F4;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    outline: none;
+}
+
+.text-personal-data {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #565656;
+    padding-left: 20px;
+}
+
+.button-confirmation {
+    margin-top: 17px;
+    background-color: transparent;
+    width: 288px;
+    height: 52px;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline: none;
+    border: 2px solid #4E4E4E;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #4E4E4E;
+}
+
+.application-complete {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.text-manager-call {
+    padding-top: 15px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000;
+}
+
+

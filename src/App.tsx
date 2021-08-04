@@ -15,7 +15,7 @@ const App = (): JSX.Element => {
     };
 
     const closePanel = () => {
-        setPanelActive(panelActive === false);
+        setPanelActive(!panelActive);
     }
 
     return (
@@ -35,9 +35,9 @@ const App = (): JSX.Element => {
             {
                 panelActive && (
                     <>
-                       {/* <Panel/>*/}
+                        <Panel/>
                         <button className={styles.buttonClose} onClick={closePanel}>
-                            <img src={cross}/>
+                            <img className={styles.iconClose} src={cross}/>
                         </button>
                         <QrCode/>
                     </>

@@ -4,10 +4,10 @@ import qr from "../../image/qr2.png";
 
 const QrCode = (): JSX.Element => {
     return(
-        <>
-        <p>Сканируйте QR-код ДЛЯ ПОЛУЧЕНИЯ ДОПОЛНИТЕЛЬНОЙ ИНФОРМАЦИИ</p>
-       <div className={styles.qrCode}><img src={qr}/></div>
-        </>
+        <div className={styles.qrBlock}>
+        <p className={styles.qrText}>Сканируйте QR-код ДЛЯ ПОЛУЧЕНИЯ ДОПОЛНИТЕЛЬНОЙ ИНФОРМАЦИИ</p>
+        <img className={styles.qrCode} src={qr}/>
+        </div>
     );
 }
 
