@@ -3,9 +3,9 @@ import * as React from 'react';
 import video from "./image/video.png";
 import scale from "./image/scale.png"
 import qr from "./image/qr1.png";
-import Line1 from "./image/Line1.svg";
-import Line2 from "./image/Line2.svg";
+import cross from "./image/Group1.svg";
 import Panel from "./components/Panel/Panel";
+import QrCode from "./components/QrCode/QrCode";
 
 const App = (): JSX.Element => {
     const [panelActive, setPanelActive] = React.useState(false)
@@ -35,11 +35,11 @@ const App = (): JSX.Element => {
             {
                 panelActive && (
                     <>
-                        <Panel/>
+                       {/* <Panel/>*/}
                         <button className={styles.buttonClose} onClick={closePanel}>
-                            {/*<img src={Line1} style={{paddingTop: 16, paddingLeft: 33, paddingRight: 33}}/>*/}
-                            {/*<img src={Line2} style={{paddingTop: 16, paddingLeft: 33, paddingRight: 33}}/>*/}
+                            <img src={cross}/>
                         </button>
+                        <QrCode/>
                     </>
                 )
             }
