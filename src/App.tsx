@@ -7,6 +7,7 @@ import cross from "./image/Group1.svg";
 import Panel from "./components/Panel/Panel";
 import QrCode from "./components/QrCode/QrCode";
 
+
 const App = (): JSX.Element => {
     const [panelActive, setPanelActive] = React.useState(false)
 

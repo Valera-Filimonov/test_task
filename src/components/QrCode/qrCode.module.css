@@ -1,9 +1,9 @@
 .qr-block {
     position: absolute;
     display: flex;
-    left: 926px;
     right: 50px;
     top: 570px;
+    width: 314px;
 }
 
 .qr-code {

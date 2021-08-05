@@ -2,66 +2,102 @@ import * as React from 'react';
 import style from './panel.module.css';
 import vector from "./../../image/Vector.svg";
 import {ChangeEvent} from "react";
+import NumberFormat from 'react-number-format';
+import fetchJsonp from 'fetch-jsonp';
+import {ACCESS_KEY} from "../../config/apiKey";
+
+enum Server {
+    true,
+    false,
+    undefined
+}
 
 const Panel = (): JSX.Element => {
-    const [sendNumber, setSendNumber] = React.useState(false)
+
     const [personalData, setPersonalData] = React.useState(false);
+
     const [input, setInput] = React.useState('');
 
     const inputHandler = (event: ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
-        setInput(`+7${value.substr(2)}`);
-    }
-
-    const confirmationNumber = () => {
-        setSendNumber(!sendNumber);
+        setInput(value);
     };
 
     const acceptPersonalData = () => {
         setPersonalData(!personalData);
+    };
+
+    const buttonClickHandler = (value: number) => {
+        setInput((prevState) => prevState + value)
+    };
+    const clearHandler = () => setInput((prevState) => prevState.substr(0,prevState.length - 1));
+
+    const[valid, setValid] = React.useState(Server.undefined)
+
+    const validNumber = () => {
+        fetchJsonp('http://apilayer.net/api/validate?access_key=' + ACCESS_KEY + '&number=' + `${input}`, {
+        })
+            .then(response => response.json())
+
+            .then(data => {
+                if (data.valid) {
+                    setValid(Server.true);
+                } else {
+                    setValid(Server.false);
+                }
+            })
     }
 
     return (
         <article className={style.panel}>
-            {!sendNumber && (
+            {((valid === Server.undefined || valid === Server.false))  && (
                 <>
                     <p className={style.headingPanel}>Введите ваш номер мобильного телефона</p>
-                    <input className={style.inputPhone} onChange={inputHandler} value={input} placeholder="+7(_ _ _)_ _ _-_ _-_ _"></input>
+                    <NumberFormat className={valid === Server.false ? style.errorPhone : style.inputPhone}
+                                  format="+7 (###) ###-####" allowEmptyFormatting mask="_" onChange={inputHandler} value={input}/>
                     <p className={style.textManager}>и с Вами свяжется наш менеждер для<br/> дальнейшей консультации</p>
 
                     <div style={{paddingTop: 36}}>
                         <div className={style.gridContainer}>
-                            <button className={style.buttonPhone}>1</button>
-                            <button className={style.buttonPhone} >2</button>
-                            <button className={style.buttonPhone}>3</button>
-                            <button className={style.buttonPhone}>4</button>
-                            <button className={style.buttonPhone}>5</button>
-                            <button className={style.buttonPhone}>6</button>
-                            <button className={style.buttonPhone}>7</button>
-                            <button className={style.buttonPhone}>8</button>
-                            <button className={style.buttonPhone}>9</button>
-                        </div>
-                        <div style={{marginTop: 10}}>
-                            <button className={style.buttonPhone} style={{width: 186, height: 52}}>стереть</button>
-                            <button className={style.buttonPhone} style={{marginLeft: 10}}>0</button>
+                            {
+                                [1, 2, 3, 4, 5, 6, 7, 8, 9].map((el) => (
+                                    <button key={el} className={style.buttonPhone} onClick={() => buttonClickHandler(el)}>{el}</button>
+                                ))
+                            }
+
+                            <button className={style.buttonPhone} style={{height: 52, gridColumn: 'span 2'}} onClick={clearHandler}>стереть</button>
+                            <button className={style.buttonPhone}  onClick={() => buttonClickHandler(0)}>0</button>
                         </div>
                     </div>
 
+                    {
+                        (valid === Server.undefined) &&
                     <div style={{display: "flex", paddingTop: 36}}>
                         <button className={style.checkboxButton} onClick={acceptPersonalData}>
                             {
                                 personalData && <img src={vector}/>
                             }
                         </button>
-                        <p className={style.textPersonalData}>Согласие на обработку<br/> персональных данных</p>
+                        <p className={style.textPersonalData}>
+                            Согласие на обработку<br/> персональных данных
+                        </p>
                     </div>
-                    <button disabled={!personalData} className={style.buttonConfirmation} onClick={confirmationNumber}>ПОДТВЕРДИТЬ НОМЕР</button>
+                    }
+
+                    {
+                    valid === Server.false &&
+                    <p className={style.textError}>Неверно введён номер</p>
+                    }
+                    <button disabled={!personalData} className={style.buttonConfirmation} onClick={() => {
+                        // confirmationNumber();
+                        validNumber();
+                    }}>ПОДТВЕРДИТЬ НОМЕР</button>
                 </>
             )
             }
-            {/*=====================================================================================================*/}
+
             {
-                (sendNumber && personalData) &&(
+                personalData && valid === Server.true &&(
                 <>
                 <p className={style.applicationComplete}>ЗАЯВКА<br/>ПРИНЯТА</p>
                 <p className={style.textManagerCall}>Держите телефон под рукой.<br/> Скоро с Вами свяжется наш менеджер.</p>
@@ -70,6 +106,6 @@ const Panel = (): JSX.Element => {
             }
         </article>
     );
-};
+}
 
 export default Panel;

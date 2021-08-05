@@ -20,12 +20,12 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #000000;
+    color: var(--color-black);
 }
 
 .input-phone {
     padding-top: 13px;
-    padding-left: 60px;
+    padding-left: 70px;
     padding-bottom: 13px;
     background-color: transparent;
     font-family: Roboto, sans-serif;
@@ -41,8 +41,46 @@
     outline: none;
 }
 
+.error-phone {
+    padding-top: 13px;
+    padding-left: 70px;
+    padding-bottom: 13px;
+    background-color: transparent;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    color: #EA0000;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    flex: none;
+    border: none;
+    outline: none;
+}
+
+.text-error {
+    padding-top: 33px;
+    padding-bottom: 25px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #EA0000;
+    font-weight: bold;
+
+}
+
+
+
 ::-webkit-input-placeholder {
-    color:#000000;
+    color:var(--color-black);
     font-weight: bold;
 }
 
@@ -55,19 +93,19 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #000000;
+    color: var(--color-black);
     flex: none;
 }
 
 .button-phone {
     background-color: transparent;
-    width: 88px;
+    width: auto;
     height: 52px;
     background-repeat:no-repeat;
     cursor:pointer;
     overflow: hidden;
     outline: none;
-    border: 2px solid #000000;
+    border: 2px solid var(--color-black);
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -77,20 +115,20 @@
 
 .button-phone:hover {
     transition-duration: .25s;
-    background: #000000;
+    background: var(--color-black);
     color: #FFFFFF;
 }
 
 .grid-container {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 0.5fr 0.5fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 88px);
+    grid-template-rows: repeat(3, 1fr);
 }
 
 .checkboxButton {
     background: #86D3F4;
-    border: 2px solid #000000;
+    border: 2px solid var(--color-black);
     box-sizing: border-box;
     width: 40px;
     height: 40px;
@@ -139,7 +177,7 @@
     line-height: 37px;
     text-align: center;
     text-transform: uppercase;
-    color: #000000;
+    color: var(--color-black);
 }
 
 .text-manager-call {
@@ -150,7 +188,7 @@
     font-size: 14px;
     line-height: 16px;
     text-align: center;
-    color: #000000;
+    color: var(--color-black);
 }
 
 
