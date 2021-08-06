@@ -1,0 +1,17 @@
+.application-complete {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-black);
+}
+
+.text-manager-call {
+    padding-top: 15px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: var(--color-black);
+}

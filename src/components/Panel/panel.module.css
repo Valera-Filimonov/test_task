@@ -54,21 +54,6 @@
     outline: none;
 }
 
-.text-error {
-    padding-top: 33px;
-    padding-bottom: 25px;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--color-red);
-}
-
-
-
 ::-webkit-input-placeholder {
     color:var(--color-black);
     font-weight: bold;
@@ -102,7 +87,7 @@
 .button-phone:hover {
     transition-duration: .25s;
     background: var(--color-black);
-    color: #FFFFFF;
+    color: var(--color-white);
 }
 
 .grid-container {
@@ -112,7 +97,7 @@
     grid-template-rows: repeat(3, 1fr);
 }
 
-.checkboxButton {
+.checkbox-button {
     background: var(--color-blue);
     border: 2px solid var(--color-black);
     box-sizing: border-box;
@@ -151,22 +136,6 @@
     color: var(--color-grey);
 }
 
-.application-complete {
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 37px;
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--color-black);
-}
 
-.text-manager-call {
-    padding-top: 15px;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-    color: var(--color-black);
-}
 
 

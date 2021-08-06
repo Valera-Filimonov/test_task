@@ -9,13 +9,10 @@ import QrCode from "./components/QrCode/QrCode";
 
 
 const App = (): JSX.Element => {
+/*=============Хук состояния панели по вводу данных=====================*/
     const [panelActive, setPanelActive] = React.useState(false)
-
-    const showPanel = () => {
-        setPanelActive(!panelActive);
-    };
-
-    const closePanel = () => {
+/*=============Функция обработчик отображения панели по вводу номера====*/
+    const displayPanel = () => {
         setPanelActive(!panelActive);
     }
 
@@ -26,10 +23,10 @@ const App = (): JSX.Element => {
                     <div className={styles.frame}>
                         <p className={styles.headingFrame}
                            style={{width: 255}}>ИСПОЛНИТЕ МЕЧТУ ВАШЕГО <br/>МАЛЫША! <br/>ПОДАРИТЕ ЕМУ СОБАКУ!</p>
-                        <img className={styles.qrCode} src={qr} alt="Qr code to go to the main site"/>
+                        <img className={styles.qrCode} src={qr} alt="Qr-код для перехода на основной сайт"/>
                         <p className={styles.textInvitation}
                            style={{width: 258}}>Сканируйте QR-код <br/>или нажмите ОК</p>
-                        <button className={styles.button} onClick={showPanel}>ОК</button>
+                        <button className={styles.button} onClick={displayPanel}>ОК</button>
                     </div>
                 )
             }
@@ -37,8 +34,8 @@ const App = (): JSX.Element => {
                 panelActive && (
                     <>
                         <Panel/>
-                        <button className={styles.buttonClose} onClick={closePanel}>
-                            <img className={styles.iconClose} src={cross} alt="The button to go to the main page"/>
+                        <button className={styles.buttonClose} onClick={displayPanel}>
+                            <img className={styles.iconClose} src={cross} alt="Кнопка для перехода на главную страницу"/>
                         </button>
                         <QrCode/>
                     </>

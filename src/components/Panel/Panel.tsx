@@ -5,6 +5,8 @@ import {ChangeEvent} from "react";
 import NumberFormat from 'react-number-format';
 import fetchJsonp from 'fetch-jsonp';
 import {ACCESS_KEY} from "../../config/apiKey";
+import ApplicationAccepted from "../ApplicationAccepted/ApplicationAccepted";
+import Warning from "../Warning/Warning";
 
 enum Server {
     true,
@@ -15,31 +17,31 @@ enum Server {
 const ARRAY_BUTTON = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const Panel = (): JSX.Element => {
-
+/*=============Хук состояния кнопки подтверждения персональных данных==============*/
     const [personalData, setPersonalData] = React.useState(false);
-
+/*=============Хук состояния поля ввода номера телефона============================*/
     const [input, setInput] = React.useState('');
-
+/*=============Хук состояния работы API по проверке номера=========================*/
+    const [valid, setValid] = React.useState(Server.undefined)
+/*=============Функция обработчик поля ввода номера телефона=======================*/
     const inputHandler = (event: ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setInput(value);
     };
-
+/*=============Функция обработчик кнопки подтверждения персональных данных=========*/
     const acceptPersonalData = () => {
         setPersonalData(!personalData);
     };
-
+/*============Функция обработчик кнопок панели по вводу номера телефона============*/
     const buttonClickHandler = (value: number) => {
         setInput((prevState) => prevState + value)
     };
+/*============Функция обработчик кнопки очистки панели по вводу номера телефона====*/
     const clearHandler = () => setInput((prevState) => prevState.substr(0, prevState.length - 1));
-
-    const [valid, setValid] = React.useState(Server.undefined)
-
+/*============Функция обработчик для работы с API по проверке номера===============*/
     const validNumber = () => {
         fetchJsonp('http://apilayer.net/api/validate?access_key=' + ACCESS_KEY + '&number=' + input, {})
             .then(response => response.json())
-
             .then(data => {
                 if (data.valid) {
                     setValid(Server.true);
@@ -48,7 +50,7 @@ const Panel = (): JSX.Element => {
                 }
             })
     }
-
+/*=================================================================================*/
     return (
         <article className={style.panel}>
             {((valid === Server.undefined || valid === Server.false)) && (
@@ -81,7 +83,8 @@ const Panel = (): JSX.Element => {
                         <div style={{display: "flex", paddingTop: 36}}>
                             <button className={style.checkboxButton} onClick={acceptPersonalData}>
                                 {
-                                    personalData && <img src={vector} alt="Confirmation of consent to the processing of personal data"/>
+                                    personalData &&
+                                    <img src={vector} alt="Подтверждение согласия на обработку персональных данных"/>
                                 }
                             </button>
                             <p className={style.textPersonalData}>
@@ -92,12 +95,11 @@ const Panel = (): JSX.Element => {
 
                     {
                         valid === Server.false &&
-                        <p className={style.textError}>Неверно введён номер</p>
+                        <Warning/>
                     }
-                    <button disabled={!personalData} className={style.buttonConfirmation} onClick={() => {
-                        // confirmationNumber();
-                        validNumber();
-                    }}>ПОДТВЕРДИТЬ НОМЕР
+
+                    <button disabled={!personalData} className={style.buttonConfirmation}
+                            onClick={validNumber}>ПОДТВЕРДИТЬ НОМЕР
                     </button>
                 </>
             )
@@ -105,11 +107,7 @@ const Panel = (): JSX.Element => {
 
             {
                 personalData && valid === Server.true && (
-                    <>
-                        <p className={style.applicationComplete}>ЗАЯВКА<br/>ПРИНЯТА</p>
-                        <p className={style.textManagerCall}>Держите телефон под рукой.<br/> Скоро с Вами свяжется наш
-                            менеджер.</p>
-                    </>
+                    <ApplicationAccepted/>
                 )
             }
         </article>
