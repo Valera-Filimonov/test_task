@@ -4,7 +4,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    background: #86D3F4;
+    background: var(--color-blue);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,8 +12,6 @@
 }
 
 .heading-panel {
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     font-weight: normal;
     font-size: 26px;
     line-height: 30px;
@@ -28,8 +26,6 @@
     padding-left: 70px;
     padding-bottom: 13px;
     background-color: transparent;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     font-weight: bold;
     font-size: 32px;
     line-height: 37px;
@@ -46,12 +42,10 @@
     padding-left: 70px;
     padding-bottom: 13px;
     background-color: transparent;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     font-weight: bold;
     font-size: 32px;
     line-height: 37px;
-    color: #EA0000;
+    color: var(--color-red);
     display: flex;
     align-items: center;
     text-transform: uppercase;
@@ -63,18 +57,14 @@
 .text-error {
     padding-top: 33px;
     padding-bottom: 25px;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 16px;
     line-height: 19px;
     display: flex;
     align-items: center;
     text-align: center;
     text-transform: uppercase;
-    color: #EA0000;
-    font-weight: bold;
-
+    color: var(--color-red);
 }
 
 
@@ -85,8 +75,6 @@
 }
 
 .text-manager {
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
@@ -106,8 +94,6 @@
     overflow: hidden;
     outline: none;
     border: 2px solid var(--color-black);
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
@@ -127,7 +113,7 @@
 }
 
 .checkboxButton {
-    background: #86D3F4;
+    background: var(--color-blue);
     border: 2px solid var(--color-black);
     box-sizing: border-box;
     width: 40px;
@@ -136,14 +122,12 @@
 }
 
 .text-personal-data {
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
     display: flex;
     align-items: center;
-    color: #565656;
+    color: var(--color-grey);
     padding-left: 20px;
 }
 
@@ -156,22 +140,18 @@
     cursor:pointer;
     overflow: hidden;
     outline: none;
-    border: 2px solid #4E4E4E;
+    border: 2px solid var(--color-grey);
 
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
     align-items: center;
     text-align: center;
     text-transform: uppercase;
-    color: #4E4E4E;
+    color: var(--color-grey);
 }
 
 .application-complete {
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     font-weight: bold;
     font-size: 32px;
     line-height: 37px;
@@ -182,8 +162,6 @@
 
 .text-manager-call {
     padding-top: 15px;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;

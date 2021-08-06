@@ -26,7 +26,7 @@ const App = (): JSX.Element => {
                     <div className={styles.frame}>
                         <p className={styles.headingFrame}
                            style={{width: 255}}>ИСПОЛНИТЕ МЕЧТУ ВАШЕГО <br/>МАЛЫША! <br/>ПОДАРИТЕ ЕМУ СОБАКУ!</p>
-                        <img className={styles.qrCode} src={qr}/>
+                        <img className={styles.qrCode} src={qr} alt="Qr code to go to the main site"/>
                         <p className={styles.textInvitation}
                            style={{width: 258}}>Сканируйте QR-код <br/>или нажмите ОК</p>
                         <button className={styles.button} onClick={showPanel}>ОК</button>
@@ -38,7 +38,7 @@ const App = (): JSX.Element => {
                     <>
                         <Panel/>
                         <button className={styles.buttonClose} onClick={closePanel}>
-                            <img className={styles.iconClose} src={cross}/>
+                            <img className={styles.iconClose} src={cross} alt="The button to go to the main page"/>
                         </button>
                         <QrCode/>
                     </>

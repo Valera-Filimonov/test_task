@@ -1,11 +1,17 @@
 :root {
   --color-black: #000;
+  --color-blue: #86D3F4;
+  --color-red: #EA0000;
+  --color-grey: #565656;
+  --color-white: #FFFFFF;
 }
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
 }
 
 .banner {
@@ -22,23 +28,20 @@
   position: absolute;
   width: 251px;
   height: 357px;
-  /*left: 1029px;*/
   bottom: 144px;
   right: 0;
-  background: #86D3F4;
+  background: var(--color-blue);
   border: none;
 }
 
 .heading-frame {
-  font-family: Roboto, sans-serif;
-  font-style: normal;
   font-size: 16px;
   line-height: 19px;
   display: flex;
   align-items: center;
   text-align: center;
   text-transform: uppercase;
-  color: #000000;
+  color: var(--color-black);
   padding-top: 20px;
   padding-right: 10px;
   padding-left: 10px;
@@ -47,23 +50,21 @@
 
 .qr-code {
   padding-top: 20px;
-  padding-left: 62.5px;
-  padding-right: 62.5px;
+  padding-left: 62px;
+  padding-right: 62px;
 }
 
 .text-invitation {
-  font-family: Roboto, sans-serif;
-  font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
   display: flex;
   align-items: center;
   text-align: center;
-  color: #000000;
+  color: var(--color-black);
   padding-top: 20px;
-  padding-left: 62.5px;
-  padding-right: 62.5px;
+  padding-left: 62px;
+  padding-right: 62px;
 }
 
 .button {
@@ -73,7 +74,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: #000000;
+  background: var(--color-black);
   border: none;
   flex: none;
   order: 4;
@@ -82,14 +83,12 @@
   margin-top: 20px;
   outline: none;
 
-  font-family: Roboto, sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: #86D3F4;
+  color: var(--color-blue);
 }
 
 .button-close {
@@ -100,7 +99,7 @@
   right: 1.56%;
   top: 2.78%;
   bottom: 90%;
-  border: 2px solid #000000;
+  border: 2px solid var(--color-black);
   box-sizing: border-box;
   outline: none;
 }

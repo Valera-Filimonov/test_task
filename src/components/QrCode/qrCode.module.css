@@ -12,8 +12,6 @@
 }
 
 .qr-text {
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
@@ -21,6 +19,6 @@
     align-items: center;
     text-align: right;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: var(--color-white);
     padding-right: 10px;
 }
