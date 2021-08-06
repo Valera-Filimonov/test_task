@@ -1,0 +1,141 @@
+.panel {
+    position: absolute;
+    width: 380px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--color-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading-panel {
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--color-black);
+}
+
+.input-phone {
+    padding-top: 13px;
+    padding-left: 70px;
+    padding-bottom: 13px;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    flex: none;
+    border: none;
+    outline: none;
+}
+
+.error-phone {
+    padding-top: 13px;
+    padding-left: 70px;
+    padding-bottom: 13px;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    color: var(--color-red);
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    flex: none;
+    border: none;
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color:var(--color-black);
+    font-weight: bold;
+}
+
+.text-manager {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--color-black);
+    flex: none;
+}
+
+.button-phone {
+    background-color: transparent;
+    width: auto;
+    height: 52px;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline: none;
+    border: 2px solid var(--color-black);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.button-phone:hover {
+    transition-duration: .25s;
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 88px);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.checkbox-button {
+    background: var(--color-blue);
+    border: 2px solid var(--color-black);
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    outline: none;
+}
+
+.text-personal-data {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: var(--color-grey);
+    padding-left: 20px;
+}
+
+.button-confirmation {
+    margin-top: 17px;
+    background-color: transparent;
+    width: 288px;
+    height: 52px;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline: none;
+    border: 2px solid var(--color-grey);
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-grey);
+}
+
+
+
+
